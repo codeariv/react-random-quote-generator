@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "./components/Card";
 
-function App() {
+const useStyles = makeStyles(() => ({
+  root: {
+    minHeight: "100vh",
+    background: "#f1f1f1",
+  },
+  heading: {
+    fontFamily: "times, Times New Roman, times-roman, georgia, serif",
+    fontSize: "40px",
+    lineHeight: "40px",
+    letterSpacing: "-1px",
+    color: "#444",
+    fontWeight: "100",
+  },
+}));
+
+export default function NestedGrid() {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justify="center"
+      className={classes.root}
+    >
+      <h2 className={classes.heading}>Random Quotes</h2>
+
+      <Grid item md={8} sm={8} xs={10}>
+        <Card />
+      </Grid>
+    </Grid>
   );
 }
-
-export default App;
