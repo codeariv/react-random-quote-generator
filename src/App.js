@@ -10,7 +10,7 @@ const useStyles = makeStyles(() => ({
   },
   heading: {
     fontFamily: "times, Times New Roman, times-roman, georgia, serif",
-    fontSize: "40px",
+    fontSize: "25px",
     lineHeight: "40px",
     letterSpacing: "-1px",
     color: "#444",
@@ -30,7 +30,7 @@ export default function NestedGrid() {
       justify="center"
       className={classes.root}
     >
-      <h2 className={classes.heading}>Random Quotes</h2>
+      <h2 className={classes.heading}>Random Quote Generator</h2>
 
       <Grid item md={8} sm={8} xs={10}>
         <Card />
