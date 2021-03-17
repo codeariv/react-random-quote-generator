@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import {
   Card,
   CardContent,
@@ -7,8 +6,8 @@ import {
   IconButton,
   Typography,
 } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { Skeleton } from "@material-ui/lab";
-
 import {
   FileCopy as FileCopyIcon,
   Refresh as RefreshIcon,
@@ -43,11 +42,12 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function RecipeReviewCard() {
+export default function QuoteCard() {
   const classes = useStyles();
+
   const [quote, setQuote] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
-  const [loadingQuote, setLoadingQuote] = useState("");
+  const [loadingQuote, setLoadingQuote] = useState(false);
   const [quoteCopied, setQuoteCopied] = useState(false);
 
   useEffect(() => {
